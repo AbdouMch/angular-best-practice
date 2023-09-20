@@ -66,3 +66,7 @@ and each one could handle some modules/folders
 # General coding best practices
 
 - Use Single Responsibility Principle(SRP): each code item(especially services) should have a single responsibility
+- Symbol naming: symbol mean any readable element in our code (variables, classes, constantes...)
+  - constants: recommendation is to use camelCase style: TS and IDE will tell us that we're trying to modify a constant. So keep it simple
+  - class: UpperCamelCase
+- It is a best practice to separate third-party import and local import by an empty line
