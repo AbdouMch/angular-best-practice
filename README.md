@@ -54,3 +54,9 @@ this tool gives the possibility to work with different node version in the same 
 
 - Use the Angular CLI to generate a new project: `ng new project-name`
 - Recommended file naming style: **descriptor.type.ts** type: component | service | module etc...
+
+# Folder organization
+
+- Make a folder for each feature/functionality/section/domain. In our case we have to feature catalog and users
+- Each folder will contain its main module and its components. For components, try to make the template, style in the same folder.
+So we reduce navigating between folders and to locate code will be much easier and faster
