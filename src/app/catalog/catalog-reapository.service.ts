@@ -34,7 +34,10 @@ export class CatalogRepositoryService {
     if (this.currentUser.classes.includes(classId))
       return throwError(() => new Error('Already enrolled'));
 
-    this.currentUser.classes.push(classId);
+    this.userRepository.currentUser = {
+      ...this.userRepository.currentUser,
+      classes: this.userRepository.currentUser.classes.concat(classId)
+    };
 
     return timer(1000);
   }
@@ -46,7 +49,10 @@ export class CatalogRepositoryService {
     if (!this.currentUser.classes.includes(classId))
       return throwError(() => new Error('Not enrolled'));
 
-    this.currentUser.classes = this.currentUser.classes.filter((c: string) => c !== classId);
+    this.userRepository.currentUser = {
+      ...this.userRepository.currentUser,
+      classes: this.userRepository.currentUser.classes.filter((c: string) => c !== classId)
+    }
 
     return timer(1000);
   }

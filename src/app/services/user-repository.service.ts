@@ -10,8 +10,8 @@ export class UserRepositoryService {
   constructor() { }
 
   saveUser(user: IUser): Observable<any> {
-    user.classes = user.classes || [];
-    this.currentUser = user;
+    let classes = user.classes || [];
+    this.currentUser = { ...user, classes: [...classes] };
 
     return timer(1000);
   }
