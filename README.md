@@ -61,4 +61,8 @@ this tool gives the possibility to work with different node version in the same 
 - Each folder will contain its main module and its components. For components, try to make the template, style in the same folder.
 So we reduce navigating between folders and to locate code will be much easier and faster. This help to make multiple dev teams work on the same project
 and each one could handle some modules/folders
-- One Item per file. Do not put two components or classes in the same file. Try to make locating elements/items of the code easier and trivial as possible 
+- One Item per file. Do not put two components or classes in the same file. Try to make locating elements/items of the code easier and trivial as possible
+
+# General coding best practices
+
+- Use Single Responsibility Principle(SRP): each code item(especially services) should have a single responsibility
