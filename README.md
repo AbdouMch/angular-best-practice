@@ -30,3 +30,27 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Tips
+
+# General rule
+
+LIFT : 
+- L: locate code quickly
+- I: Identify code at a glance
+- F: Flattest structure possible
+- T: Try to be DRY(Don't Repeat Yourself)
+
+# Setup local environment
+
+- use Node Version Management tool : installation guide [NVM](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/).
+this tool gives the possibility to work with different node version in the same machine
+  - `nvm install 18.10.0`
+  - `nvm use 18.10.0`
+- Install Angular CLI : [Angular version compatibility](https://angular.io/guide/versions)
+  - `npm install -g @angular/cli@version`
+
+# Application structure and file naming
+
+- Use the Angular CLI to generate a new project: `ng new project-name`
+- Recommended file naming style: **descriptor.type.ts** type: component | service | module etc...
