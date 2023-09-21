@@ -73,3 +73,16 @@ and each one could handle some modules/folders
 - Prefer immutability than assigning or changing variables especially objects value directly. This help reducing bugs and guarantee change detection especially for array like onPush Angular hook
 - Try to keep functions/methods nice and short, and use smaller methods to clarify more complex code. Doing this makes the really easy to read
 - Use strict mode in the tsconfig.json. This reduces any several bugs related to lazy typing. And try to not abuse the use of any by creating the correct datatype for our variables
+
+# Angular Module organization
+
+- It is a best practice to break the app into Feature modules. This helps in performance by lazy loading them.
+Also, it provides a high level of encapsulation, and we only expose what's necessary to external modules
+- Recommended modules:
+  - Routing module: Routes or routes definition. Angular outing imports
+  - Core module: isn't technically a recommended module anymore. Used to provide any shred singleton services, as well as any App-level components.
+  This is not only mean any shared components but rather components that are only used at a top-level app component(like a navbar component that is used in the AppComponent)
+  - Shared module: Provides any shared components, directives and pipes that are used throughout the application: loading-spinning component
+  - Feature modules: feature-level modules used to regroup feature-level components, directives, pipes and services. 
+  For example the Catalog and User components in our app
+- 

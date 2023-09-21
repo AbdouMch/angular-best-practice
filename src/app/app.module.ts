@@ -6,10 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CatalogComponent } from "./catalog/catalog.component";
 import { SignInComponent } from "./users/sign-in.component";
-import { LoadingComponent } from "./components/loading-spinner.component";
 import {RegisterComponent} from "./users/register.component";
 import {CatalogRepositoryService} from "./catalog/catalog-reapository.service";
 import {CoreModule} from "./core/core.module";
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -17,14 +17,14 @@ import {CoreModule} from "./core/core.module";
     CatalogComponent,
     RegisterComponent,
     SignInComponent,
-    LoadingComponent,
   ],
   imports: [
+    CoreModule,
+    SharedModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    CoreModule,
   ],
   providers: [CatalogRepositoryService],
   bootstrap: [AppComponent]
