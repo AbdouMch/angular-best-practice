@@ -15,6 +15,18 @@ export class CatalogRepositoryService {
     return this.userRepository.currentUser;
   }
 
+  set currentUser(user: IUser|null) {
+    if (null === user) {
+      this.userRepository.currentUser = null;
+
+      return;
+    }
+
+    this.userRepository.currentUser = {
+      ...user
+    };
+  }
+
   getCatalog(): Observable<IClass[]> {
     const subject = new Subject<IClass[]>();
     const classes = this.currentUser?.classes || [];
@@ -33,10 +45,9 @@ export class CatalogRepositoryService {
 
     if (this.currentUser.classes.includes(classId))
       return throwError(() => new Error('Already enrolled'));
-
-    this.userRepository.currentUser = {
-      ...this.userRepository.currentUser,
-      classes: this.userRepository.currentUser.classes.concat(classId)
+    this.currentUser = {
+      ...this.currentUser,
+      classes: this.currentUser.classes.concat(classId) as string[]
     };
 
     return timer(1000);
@@ -49,9 +60,9 @@ export class CatalogRepositoryService {
     if (!this.currentUser.classes.includes(classId))
       return throwError(() => new Error('Not enrolled'));
 
-    this.userRepository.currentUser = {
-      ...this.userRepository.currentUser,
-      classes: this.userRepository.currentUser.classes.filter((c: string) => c !== classId)
+    this.currentUser = {
+      ...this.currentUser,
+      classes: this.currentUser.classes.filter((c: string) => c !== classId)
     }
 
     return timer(1000);
