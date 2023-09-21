@@ -71,3 +71,4 @@ and each one could handle some modules/folders
   - class: UpperCamelCase
 - It is a best practice to separate third-party import and local import by an empty line
 - Prefer immutability than assigning or changing variables especially objects value directly. This help reducing bugs and guarantee change detection especially for array like onPush Angular hook
+- Try to keep functions/methods nice and short, and use smaller methods to clarify more complex code. Doing this makes the really easy to read
