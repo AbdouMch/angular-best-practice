@@ -97,3 +97,5 @@ Also, it provides a high level of encapsulation, and we only expose what's neces
 - Use Input and Output Decorators instead of component metadata. This will make it easy to detect that a property is an input, 
 and also when renaming it we don't have to make changes in multiple places
 - Apply SRP by Delegating complex logic to Services
+- When using a Lifecycle Hook always implement the Interface, so when mistyping the method name or the signature of the method, 
+the IDE or the compiler will alert us of that error
