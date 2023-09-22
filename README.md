@@ -93,3 +93,4 @@ Also, it provides a high level of encapsulation, and we only expose what's neces
   - Prefix for an app component (shared component or a core component) has an app prefix, like wb (for whitebeards in our case)
   - Prefix for a feature component could have the 2 beginning characters of the module name. ca for catalog for example
   - Change the general prefix used by the angular cli for generating files in the angular.json config file. The key is "prefix"
+- The Angular style guide recommends that If the template or the style are more than 3 lines long we should extract them

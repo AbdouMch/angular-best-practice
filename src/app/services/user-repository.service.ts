@@ -19,7 +19,7 @@ export class UserRepositoryService {
   signIn(credentials: any): Observable<any> {
     //Never, ever check credentials in client-side code.
     //This code is only here to supply a fake endpoint for signing in.
-    if (credentials.email !== 'me@whitebeards.edu' || credentials.password !== 'super-secret')
+    if (credentials.email !== 'user' || credentials.password !== 'user')
       return throwError(() => new Error('Invalid login'));
 
     this.currentUser = {
