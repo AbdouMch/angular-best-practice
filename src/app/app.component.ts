@@ -8,16 +8,16 @@ import { Component } from '@angular/core';
         margin: auto;
       }
       .main {
-        background-color:white;      
+        background-color:white;
       }
     `],
   template: `
       <div class="app">
-        <nav-bar></nav-bar>
-        <div class="main">
-          <router-outlet></router-outlet>
-        </div>
+          <wb-nav-bar></wb-nav-bar>
+          <div class="main">
+              <router-outlet></router-outlet>
+          </div>
       </div>
-    `,
+  `,
 })
 export class AppComponent { }

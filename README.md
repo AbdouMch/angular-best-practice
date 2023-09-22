@@ -85,4 +85,11 @@ Also, it provides a high level of encapsulation, and we only expose what's neces
   - Shared module: Provides any shared components, directives and pipes that are used throughout the application: loading-spinning component
   - Feature modules: feature-level modules used to regroup feature-level components, directives, pipes and services. 
   For example the Catalog and User components in our app
-- 
+
+# Angular Components
+
+- Use prefixes in component selector, so when importing a module it doesn't conflict with an existing one.
+  - prefix has between 2 and 3 characters for easy reading
+  - Prefix for an app component (shared component or a core component) has an app prefix, like wb (for whitebeards in our case)
+  - Prefix for a feature component could have the 2 beginning characters of the module name. ca for catalog for example
+  - Change the general prefix used by the angular cli for generating files in the angular.json config file. The key is "prefix"
