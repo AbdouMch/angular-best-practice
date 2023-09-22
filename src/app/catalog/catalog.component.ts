@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { IClass } from './class.model';
 import {CatalogRepositoryService} from "./catalog-reapository.service";
 import {UserRepositoryService} from "../services/user-repository.service";
+import {FilterClassesService} from "./filter-classes.service";
 
 @Component({
   styleUrls: ['./catalog.component.css'],
@@ -14,7 +15,8 @@ export class CatalogComponent {
 
   constructor(
     private catalogRepository: CatalogRepositoryService,
-    public userRepository: UserRepositoryService
+    public userRepository: UserRepositoryService,
+    private filterClassesService: FilterClassesService
   ) { }
 
   ngOnInit() {
@@ -41,22 +43,6 @@ export class CatalogComponent {
   }
 
   applyFilter(filter: string) {
-    if (!filter) {
-      this.visibleClasses = this.classes;
-      return;
-    }
-
-    if (filter === 'GEN') {
-      this.showOnlyGeneralCourses();
-    } else {
-      this.visibleClasses = this.classes.filter(c => c.course.courseNumber.startsWith(filter));
-    }
-  }
-
-  private showOnlyGeneralCourses() {
-    this.visibleClasses = this.classes.filter(c =>
-      !c.course.courseNumber.startsWith('CH') &&
-      !c.course.courseNumber.startsWith('PO') &&
-      !c.course.courseNumber.startsWith('SP'));
+    this.visibleClasses = this.filterClassesService.filter(filter, this.classes);
   }
 }

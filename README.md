@@ -96,3 +96,4 @@ Also, it provides a high level of encapsulation, and we only expose what's neces
 - The Angular style guide recommends that If the template or the style are more than 3 lines long we should extract them
 - Use Input and Output Decorators instead of component metadata. This will make it easy to detect that a property is an input, 
 and also when renaming it we don't have to make changes in multiple places
+- Apply SRP by Delegating complex logic to Services

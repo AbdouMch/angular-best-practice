@@ -4,6 +4,7 @@ import {RouterModule} from "@angular/router";
 import {CatalogComponent} from "./catalog.component";
 import {CatalogRepositoryService} from "./catalog-reapository.service";
 import {SharedModule} from "../shared/shared.module";
+import {FilterClassesService} from "./filter-classes.service";
 
 @NgModule({
   imports: [
@@ -11,6 +12,6 @@ import {SharedModule} from "../shared/shared.module";
     SharedModule,
   ],
   declarations: [CatalogComponent],
-  providers: [CatalogRepositoryService]
+  providers: [CatalogRepositoryService, FilterClassesService]
 })
 export class CatalogModule { }
