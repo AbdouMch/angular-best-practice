@@ -99,3 +99,7 @@ and also when renaming it we don't have to make changes in multiple places
 - Apply SRP by Delegating complex logic to Services
 - When using a Lifecycle Hook always implement the Interface, so when mistyping the method name or the signature of the method, 
 the IDE or the compiler will alert us of that error
+
+# Angular Services
+
+- Use @Injectable instead of @Inject. Less verbosity when handling dependency injection. Make the service more flexible for future evolution
