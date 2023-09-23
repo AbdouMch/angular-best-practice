@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject, throwError, timer } from 'rxjs';
+// better use of lodash-es to optimize the size of the chunks
+// we leave this for experimenting the monitoring of chunks sizes
+import { concat } from 'lodash';
 
 import { IClass, ICourse } from './class.model';
 import {UserRepositoryService} from "../services/user-repository.service";
@@ -50,7 +53,7 @@ export class CatalogRepositoryService {
       return throwError(() => new Error('Already enrolled'));
     this.currentUser = {
       ...this.currentUser,
-      classes: this.currentUser.classes.concat(classId) as string[]
+      classes: concat(this.currentUser.classes,classId)
     };
 
     return timer(1000);

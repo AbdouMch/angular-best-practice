@@ -119,4 +119,22 @@ That's why it is considered best practice to use the providedIn root for singlet
 - The use of providers key in the metadata of a component creates a specific injector for that component.
  In this case the registered service is instantiated each time we load the component.
  This is useful in cases we want to have a new instance dedicated for that component
-- 
+- try to use tree shakable library, so the bundler will compile only the imported functions. This will optimize the size on the app.
+This example with 'lodash' not tree shakable and the 'lodash-es' that is tree shakable
+
+with lodash we have the compiled size 106 kB
+
+
+![](./docs/not-tree-shakable-library.png)
+
+
+with lodash-es the size is about 84kB
+
+
+![](./docs/tree-shakable-library.png)
+
+- Monitor the size of bundles by adjusting the limits on the angular.json file "configurations"/"production"/"budgets" section.
+With this config we will be notified with a warning or a build error if a chunk exceeds a limit
+
+
+![](./docs/monitoring-buldles-sizes.png)
