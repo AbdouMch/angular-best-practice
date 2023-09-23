@@ -13,6 +13,7 @@ import {ServiceI1Service} from "./service-i1.service";
 export class CatalogComponent implements OnInit {
   classes: IClass[] = [];
   visibleClasses: IClass[] = [];
+  orderByField: string = '';
 
   constructor(
     private catalogRepository: CatalogRepositoryService,

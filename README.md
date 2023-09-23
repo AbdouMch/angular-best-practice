@@ -138,3 +138,10 @@ With this config we will be notified with a warning or a build error if a chunk 
 
 
 ![](./docs/monitoring-buldles-sizes.png)
+
+
+- Use OnPush Change Detection when needed. In normal cases, Angular detects changes in bindings at every firing event (click, async calls ...etc)
+by calculating if there is a difference in references of the bound objects. 
+This could impact some pages performances especially if an object has a heavy calculation. 
+In this case using OnPush change detection could help optimize performances. 
+Here we notice the importance of immutability to help angular in detecting changes of objects. So we must change reference of the object rather than its properties
