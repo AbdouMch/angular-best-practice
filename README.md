@@ -145,3 +145,8 @@ by calculating if there is a difference in references of the bound objects.
 This could impact some pages performances especially if an object has a heavy calculation. 
 In this case using OnPush change detection could help optimize performances. 
 Here we notice the importance of immutability to help angular in detecting changes of objects. So we must change reference of the object rather than its properties
+- Pipes are purer by default, meaning that they don't work by data mutation. They only get reevaluated updated if the actual object reference
+changes of the object that the pipe is being applied to
+- To fix problem of the pipe that it don't detect object value change we have 2 main fixes:
+  - The dirtiest way: making the pipe impure by setting the value of pure in pipe metadata to false
+  - The best practice solution: use immutability by changing the reference of the array that the pipe is been applied to and let the pipe pure

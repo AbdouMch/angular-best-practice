@@ -50,4 +50,15 @@ export class CatalogComponent implements OnInit {
   applyFilter(filter: string) {
     this.visibleClasses = this.filterClassesService.filter(filter, this.classes);
   }
+
+  mutateFirstProfessor() {
+    this.visibleClasses[0].professor = 'Lucas';
+  }
+
+  immutablyUpdateFirstProfessor() {
+    this.visibleClasses = [
+      {...this.visibleClasses[0], professor: 'Lucas'},
+      ...this.visibleClasses.slice(1)
+    ];
+  }
 }
