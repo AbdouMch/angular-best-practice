@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import {RouterModule} from "@angular/router";
 
 import {CatalogComponent} from "./catalog.component";
-import {CatalogRepositoryService} from "./catalog-reapository.service";
 import {SharedModule} from "../shared/shared.module";
-import {FilterClassesService} from "./filter-classes.service";
+import {ServiceI1Service} from "./service-i1.service";
 
 @NgModule({
   imports: [
@@ -12,6 +11,6 @@ import {FilterClassesService} from "./filter-classes.service";
     SharedModule,
   ],
   declarations: [CatalogComponent],
-  providers: [CatalogRepositoryService, FilterClassesService]
+  providers: [ServiceI1Service]// here we register the service in the root injector, the same instance that is provided in the UsersModule
 })
 export class CatalogModule { }

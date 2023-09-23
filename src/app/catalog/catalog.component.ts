@@ -4,6 +4,7 @@ import { IClass } from './class.model';
 import {CatalogRepositoryService} from "./catalog-reapository.service";
 import {UserRepositoryService} from "../services/user-repository.service";
 import {FilterClassesService} from "./filter-classes.service";
+import {ServiceI1Service} from "./service-i1.service";
 
 @Component({
   styleUrls: ['./catalog.component.css'],
@@ -16,7 +17,8 @@ export class CatalogComponent implements OnInit {
   constructor(
     private catalogRepository: CatalogRepositoryService,
     public userRepository: UserRepositoryService,
-    private filterClassesService: FilterClassesService
+    private filterClassesService: FilterClassesService,
+     private serviceI1Service: ServiceI1Service// here we will instance of the Root injector
   ) { }
 
   ngOnInit() {

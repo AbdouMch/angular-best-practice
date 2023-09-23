@@ -3,7 +3,11 @@ import { Observable, EMPTY, throwError, timer } from 'rxjs';
 
 import { IUser } from '../users/user.model';
 
-@Injectable()
+@Injectable({
+  // indicates that the service is registered in the Root dependency Injector
+  // This will tell Angular that the service will be provided to the entire app as a Singleton
+  providedIn: 'root',
+})
 export class UserRepositoryService {
   currentUser: IUser | null = null;
 

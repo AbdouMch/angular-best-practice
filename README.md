@@ -103,3 +103,8 @@ the IDE or the compiler will alert us of that error
 # Angular Services
 
 - Use @Injectable instead of @Inject. Less verbosity when handling dependency injection. Make the service more flexible for future evolution
+- As a best practice we provide services with the providedIn root in the service metadata instead of the providers key in the module.
+This will register the service as a singleton in the Angular Root Injector, and it will be available for the entire app
+![](/home/admintalan/Documents/me/angular/whitebeards/docs/service-injectors.png "Service Injectors")
+
+- Use Services for data retrieval, like the CatalogRepositoryService in our case 

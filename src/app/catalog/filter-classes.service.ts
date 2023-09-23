@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import {IClass} from "./class.model";
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class FilterClassesService {
   public filter(filter: string, classes: IClass[]): IClass[]
   {

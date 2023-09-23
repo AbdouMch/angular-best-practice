@@ -3,10 +3,12 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {UserRepositoryService} from "../services/user-repository.service";
 import {IUser} from "./user.model";
+import {ServiceI1Service} from "../catalog/service-i1.service";
 
 @Component({
   styleUrls: ['./register.component.css'],
-  templateUrl: './register.component.html'
+  templateUrl: './register.component.html',
+  providers: [ServiceI1Service]// here we will have a unique instance of the service
 })
 
 export class RegisterComponent {
@@ -17,7 +19,7 @@ export class RegisterComponent {
   password: FormControl;
   saving: boolean = false;
 
-  constructor(private router: Router, private dataRepository: UserRepositoryService) {
+  constructor(private router: Router, private dataRepository: UserRepositoryService, private serviceI1Service: ServiceI1Service) {
     this.firstName = new FormControl('', Validators.required);
     this.lastName = new FormControl('', Validators.required);
     this.email = new FormControl('', Validators.required);

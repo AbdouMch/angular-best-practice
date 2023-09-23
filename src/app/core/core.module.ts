@@ -16,6 +16,6 @@ import {UserRepositoryService} from "../services/user-repository.service";
     AccountMenuComponent,
   ],
   declarations: [NavBarComponent, AccountMenuComponent],
-  providers: [UserRepositoryService]
+  providers: []
 })
 export class CoreModule { }

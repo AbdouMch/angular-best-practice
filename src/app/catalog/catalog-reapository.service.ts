@@ -4,10 +4,13 @@ import { Observable, Subject, throwError, timer } from 'rxjs';
 import { IClass, ICourse } from './class.model';
 import {UserRepositoryService} from "../services/user-repository.service";
 import {IUser} from "../users/user.model";
+import {ServiceI1Service} from "./service-i1.service";
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class CatalogRepositoryService {
-  constructor(private userRepository: UserRepositoryService) {
+  constructor(private userRepository: UserRepositoryService, serviceI1Service: ServiceI1Service) {
   }
 
   get currentUser(): IUser|null
