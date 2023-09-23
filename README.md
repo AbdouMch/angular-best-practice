@@ -108,3 +108,8 @@ This will register the service as a singleton in the Angular Root Injector, and 
 ![](/home/admintalan/Documents/me/angular/whitebeards/docs/service-injectors.png "Service Injectors")
 
 - Use Services for data retrieval, like the CatalogRepositoryService in our case 
+
+# Angular performance best practices
+
+- Lazy-load Feature modules
+- 

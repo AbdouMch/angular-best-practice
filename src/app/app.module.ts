@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import {CoreModule} from "./core/core.module";
 import {SharedModule} from "./shared/shared.module";
 import {CatalogModule} from "./catalog/catalog.module";
-import {UsersModule} from "./users/users.module";
 
 @NgModule({
   declarations: [
@@ -17,7 +16,6 @@ import {UsersModule} from "./users/users.module";
     CoreModule,
     SharedModule,
     CatalogModule,
-    UsersModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
