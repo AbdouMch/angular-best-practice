@@ -15,6 +15,10 @@ export class SignInComponent {
   constructor(private router: Router, private dataRepository: UserRepositoryService, private serviceI1Service: ServiceI1Service) {
   }
 
+  ngOnInit() {
+    this.serviceI1Service.hello();
+  }
+
   signIn(credentials: any) {
     this.dataRepository.signIn(credentials)
       .subscribe({

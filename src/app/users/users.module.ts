@@ -7,6 +7,7 @@ import {SignInComponent} from "./sign-in.component";
 import {SharedModule} from "../shared/shared.module";
 import {ServiceI1Service} from "../catalog/service-i1.service";
 import {UsersRoutingModule} from "./users-routing.module";
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   imports: [
@@ -19,8 +20,9 @@ import {UsersRoutingModule} from "./users-routing.module";
   declarations: [
     RegisterComponent,
     SignInComponent,
+    UsersComponent,
   ],
-  providers: [ServiceI1Service]// TODO: test lazy-loading of Modules to know if we get the same instance provided in the CatalogModule
+  providers: [ServiceI1Service]// In lazy-loading of a Module we get a new instance of the service
 })
 export class UsersModule {
   constructor() {

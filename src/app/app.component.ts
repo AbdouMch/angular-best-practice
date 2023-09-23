@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ServiceI1Service} from "./catalog/service-i1.service";
 
 @Component({
   selector: 'app-root',
@@ -20,4 +21,7 @@ import { Component } from '@angular/core';
       </div>
   `,
 })
-export class AppComponent { }
+export class AppComponent {
+  constructor(private serviceI1Service: ServiceI1Service) {
+  }
+}

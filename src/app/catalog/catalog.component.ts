@@ -18,10 +18,12 @@ export class CatalogComponent implements OnInit {
     private catalogRepository: CatalogRepositoryService,
     public userRepository: UserRepositoryService,
     private filterClassesService: FilterClassesService,
-     private serviceI1Service: ServiceI1Service// here we will instance of the Root injector
+     private serviceI1Service: ServiceI1Service// here we will have the instance of the Root injector
   ) { }
 
   ngOnInit() {
+    this.serviceI1Service.hello();
+
     this.catalogRepository.getCatalog()
       .subscribe((classes: IClass[]) => { this.classes = classes; this.applyFilter('') });
   }

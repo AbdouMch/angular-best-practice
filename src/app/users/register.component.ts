@@ -33,6 +33,9 @@ export class RegisterComponent {
     });
   }
 
+  ngOnInit() {
+    this.serviceI1Service.hello();
+  }
 
   registerUser(user: IUser) {
     this.saving = true;

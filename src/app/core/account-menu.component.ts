@@ -15,6 +15,7 @@ import {IUser} from "../users/user.model";
       </span>
       <span *ngIf="!user"><a [routerLink]="['/users/sign-in']">Sign In</a></span>
       <span *ngIf="!user"><a [routerLink]="['/users/register']">Register</a></span>
+      <span *ngIf="!user"><a [routerLink]="['/users/list']">Users List</a></span>
     </div>`
 })
 export class AccountMenuComponent {

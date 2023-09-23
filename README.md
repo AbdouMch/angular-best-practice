@@ -49,6 +49,8 @@ this tool gives the possibility to work with different node version in the same 
   - `nvm use 18.10.0`
 - Install Angular CLI : [Angular version compatibility](https://angular.io/guide/versions)
   - `npm install -g @angular/cli@version`
+- install local web server to test builds : `npm -g http-server`
+  - run the web server `http-server dis/directory_of_build`
 
 # Application structure and file naming
 
@@ -105,11 +107,16 @@ the IDE or the compiler will alert us of that error
 - Use @Injectable instead of @Inject. Less verbosity when handling dependency injection. Make the service more flexible for future evolution
 - As a best practice we provide services with the providedIn root in the service metadata instead of the providers key in the module.
 This will register the service as a singleton in the Angular Root Injector, and it will be available for the entire app
-![](/home/admintalan/Documents/me/angular/whitebeards/docs/service-injectors.png "Service Injectors")
+![](./docs/service-injectors.png "Service Injectors")
 
 - Use Services for data retrieval, like the CatalogRepositoryService in our case 
 
 # Angular performance best practices
 
 - Lazy-load Feature modules
+- When lazy-loading a module and it has some services registered in the providers key, we get new instances of them. 
+That's why it is considered best practice to use the providedIn root for singleton services
+- The use of providers key in the metadata of a component creates a specific injector for that component.
+ In this case the registered service is instantiated each time we load the component.
+ This is useful in cases we want to have a new instance dedicated for that component
 - 
